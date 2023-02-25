@@ -112,10 +112,15 @@ public extension ProductText {
 
    }
 
-   func copyWith(color : Color?, textAlign : TextAlignment?, customFont : Font?) -> some View {
+   func copyWith(
+      color : Color?=nil,
+      textAlign : TextAlignment?=nil,
+      lineLimit : Int = 0
+   ) -> some View {
       self
          .foregroundColor(color)
          .multilineTextAlignment(textAlign ?? .center)
-         .font(customFont)
+         .lineLimit(lineLimit)
+
    }
 }
