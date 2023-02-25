@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 public protocol EdgeInsetsTypes {
 
    var size: AppSizes { get set }
@@ -21,6 +23,9 @@ public protocol EdgeInsetsTypes {
    var xxLarge: EdgeInsets { get }
 }
 
+
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 struct PagePadding {
    private let size: AppSizes? = DesignKit.shared.appSizes
 
@@ -35,6 +40,7 @@ struct PagePadding {
       assert(size != nil, "DesignKit has not been initialized")
    }
 
+   @available(iOS 13.0, *)
    enum Custom  {
       case all(value: CGFloat)
       case vertical(value: CGFloat)
@@ -65,7 +71,9 @@ struct PagePadding {
    }
 }
 
- struct All: EdgeInsetsTypes {
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
+struct All: EdgeInsetsTypes {
    var xxSmall: EdgeInsets {
       return EdgeInsets(top: size.xxSmall, leading: size.xxSmall, bottom: size.xxSmall, trailing: size.xxSmall)
    }
@@ -105,6 +113,8 @@ struct PagePadding {
    }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
  struct Horizontal: EdgeInsetsTypes {
    mutating func setSize(_ size: AppSizes) {
       self.size = size
@@ -145,6 +155,8 @@ struct PagePadding {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
  struct Vertical: EdgeInsetsTypes {
 
 
@@ -183,6 +195,8 @@ struct PagePadding {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
  struct Left: EdgeInsetsTypes {
    mutating func setSize(_ size: AppSizes) {
       self.size = size
@@ -223,6 +237,8 @@ struct PagePadding {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
  struct Right: EdgeInsetsTypes {
 
 
@@ -261,6 +277,8 @@ struct PagePadding {
     }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 struct Top: EdgeInsetsTypes {
 
 
@@ -299,6 +317,8 @@ struct Top: EdgeInsetsTypes {
    }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 struct Bottom: EdgeInsetsTypes {
 
 

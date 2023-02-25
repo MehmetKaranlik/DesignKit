@@ -8,13 +8,15 @@
 import Foundation
 import SwiftUI
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 public struct ProductText: View {
    let label: String
    let customFont: SwiftUI.Font?
    init(label: String, customFont: SwiftUI.Font?) {
       self.label = label
       self.customFont = customFont
-      assert(DesignKit.shared.fonts != nil, "DesignKit has not been initialized")
+      assert(DesignKit.shared.appFonts != nil, "DesignKit has not been initialized")
    }
  public var body: some View {
       return Text(label)
@@ -22,88 +24,90 @@ public struct ProductText: View {
    }
 }
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 public extension ProductText {
    static func largeTitle(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.largeTitle
+         customFont: DesignKit.shared.appFonts?.largeTitle
       )
    }
 
    static func title1(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.title1
+         customFont: DesignKit.shared.appFonts?.title1
       )
    }
 
    static func title2(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont:  DesignKit.shared.fonts?.title2
+         customFont:  DesignKit.shared.appFonts?.title2
       )
    }
 
    static func title3(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.title3
+         customFont: DesignKit.shared.appFonts?.title3
       )
    }
 
    static func headline(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont:DesignKit.shared.fonts?.headline
+         customFont:DesignKit.shared.appFonts?.headline
       )
    }
 
    static func body(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.body
+         customFont: DesignKit.shared.appFonts?.body
       )
    }
 
    static func callout(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.callout
+         customFont: DesignKit.shared.appFonts?.callout
       )
    }
 
    static func subhead(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont:DesignKit.shared.fonts?.subhead
+         customFont:DesignKit.shared.appFonts?.subhead
       )
    }
 
    static func footnote(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.footnote
+         customFont: DesignKit.shared.appFonts?.footnote
       )
    }
 
    static func caption1(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.caption1
+         customFont: DesignKit.shared.appFonts?.caption1
       )
    }
 
    static func caption2(_ label: String) -> ProductText {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.caption2
+         customFont: DesignKit.shared.appFonts?.caption2
       )
    }
 
    static func small(_ label: String) -> some View {
       ProductText(
          label: label,
-         customFont: DesignKit.shared.fonts?.small
+         customFont: DesignKit.shared.appFonts?.small
       )
 
    }

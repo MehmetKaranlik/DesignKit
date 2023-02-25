@@ -8,6 +8,8 @@
 import Foundation
 import SwiftUI
 
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 public protocol AppFonts {
    var largeTitle : SwiftUI.Font? { get set }
    var title1 : SwiftUI.Font? { get set }

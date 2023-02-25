@@ -8,9 +8,10 @@
 import Foundation
 import SwiftUI
 
-
-
+@available(iOS 13.0, *)
+@available(macOS 10.15, *)
 public protocol AppColors {
+
    var primary : Color? { get set }
    var primaryVariant : Color?  { get set }
    var primaryContainer : Color? { get set }

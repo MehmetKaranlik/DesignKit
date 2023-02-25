@@ -6,11 +6,16 @@
 //
 
 import Foundation
-import UIKit
 
+#if canImport(UIKit)
+import UIKit
+#endif
+
+@available(iOS 13.0, *)
 public extension UIViewController {
 
 
+   @available(iOS 15.0, *)
    func configureNavigationBar(
       backgroundColor : UIColor = UIColor.white,
       largeTitleAttributes : [NSAttributedString.Key : Any] = [:],
