@@ -16,15 +16,15 @@ public struct DesignKit {
    private init(){}
 
 
-   mutating func setColors( _ colors : any AppColors ){
+  public mutating func setColors( _ colors : any AppColors ){
       self.appColors = colors
    }
 
-   mutating func setDesignSizes(_ sizes : any AppSizes ){
+   public mutating func setDesignSizes(_ sizes : any AppSizes ){
       self.appSizes = sizes
    }
 
-   mutating func setFonts(_ fonts : any AppFonts ){
+   public mutating func setFonts(_ fonts : any AppFonts ){
       self.appFonts = fonts
    }
 
