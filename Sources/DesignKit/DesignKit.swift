@@ -3,7 +3,7 @@
 public struct DesignKit {
 
 
-   static let shared  = DesignKit()
+ public static let shared  = DesignKit()
 
    var appColors : (any AppColors)? = nil
 
