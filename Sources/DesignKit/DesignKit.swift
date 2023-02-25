@@ -3,7 +3,7 @@
 public struct DesignKit {
 
 
- public static let shared  = DesignKit()
+ public static var shared  = DesignKit()
 
    var appColors : (any AppColors)? = nil
 
@@ -17,8 +17,8 @@ public struct DesignKit {
 
 
   public mutating func setColors( _ colors : any AppColors ){
-      self.appColors = colors
-   }
+     self.appColors = colors
+  }
 
    public mutating func setDesignSizes(_ sizes : any AppSizes ){
       self.appSizes = sizes
