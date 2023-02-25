@@ -111,4 +111,11 @@ public extension ProductText {
       )
 
    }
+
+   func copyWith(color : Color?, textAlign : TextAlignment?, customFont : Font?) -> some View {
+      self
+         .foregroundColor(color)
+         .multilineTextAlignment(textAlign ?? .center)
+         .font(customFont)
+   }
 }
