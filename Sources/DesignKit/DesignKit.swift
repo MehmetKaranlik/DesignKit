@@ -27,7 +27,5 @@ public struct DesignKit {
    public mutating func setFonts(_ fonts : any AppFonts ){
       self.appFonts = fonts
    }
-
-
-
+   
 }
