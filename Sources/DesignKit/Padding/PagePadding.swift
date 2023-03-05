@@ -27,17 +27,19 @@ import SwiftUI
 @available(iOS 13.0, *)
 @available(macOS 10.15, *)
 public struct PagePadding {
-   private let size: AppSizes? = DesignKit.shared.appSizes
+   private static var size: AppSizes? {
+      DesignKit.shared.appSizes
+   }
 
-   public lazy var all = All(size: self.size!)
-   public lazy var horizontal = Horizontal(size: self.size!)
-   public lazy var top = Top(size: self.size!)
-   public  lazy var bottom = Bottom(size: self.size!)
-   public lazy var left = Left(size: self.size!)
-   public  lazy var right = Right(size: self.size!)
+   public static var all = All(size: size!)
+   public static var horizontal = Horizontal(size: size!)
+   public static var top = Top(size: size!)
+   public  static var bottom = Bottom(size: size!)
+   public static var left = Left(size: size!)
+   public  static var right = Right(size: size!)
 
-   init() {
-      assert(size != nil, "DesignKit has not been initialized")
+ public init() {
+    assert(PagePadding.size != nil, "DesignKit has not been initialized")
    }
 
    @available(iOS 13.0, *)
