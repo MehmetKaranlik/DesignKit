@@ -18,17 +18,12 @@ public struct ProductText: View {
       self.customFont = customFont
       assert(DesignKit.shared.appFonts != nil, "DesignKit has not been initialized")
    }
+
  public var body: some View {
       return Text(label)
          .font(customFont)
    }
 
-
-   fileprivate mutating func updateCustomFontWeight(fontWeight : Font.Weight? = nil) {
-      guard let fontWeight else { return }
-      let newFont = self.customFont?.weight(fontWeight)
-      self = ProductText(label: self.label, customFont: newFont)
-   }
 }
 
 @available(iOS 13.0, *)
@@ -119,19 +114,19 @@ public extension ProductText {
 
    }
 
-   mutating func copyWith(
+    func copyWith(
       color : Color?=nil,
       textAlign : TextAlignment?=nil,
       lineLimit : Int? = nil,
       fontWeight : Font.Weight? = nil
    ) -> some View {
+      var  font  = self.customFont
       if let fontWeight {
-         self.updateCustomFontWeight(fontWeight: fontWeight)
+        font = font?.weight(fontWeight)
       }
-         return self
-            .foregroundColor(color)
-            .multilineTextAlignment(textAlign ?? .center)
-            .lineLimit(lineLimit)
-
+     return  ProductText(label: self.label, customFont: font)
+         .foregroundColor(color)
+         .multilineTextAlignment(textAlign ?? .center)
+         .lineLimit(lineLimit)
    }
 }
