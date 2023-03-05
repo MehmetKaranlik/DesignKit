@@ -115,11 +115,13 @@ public extension ProductText {
    func copyWith(
       color : Color?=nil,
       textAlign : TextAlignment?=nil,
-      lineLimit : Int? = nil
+      lineLimit : Int? = nil,
+      fontWeight : Font.Weight? = nil
    ) -> some View {
-      self
-         .foregroundColor(color)
-         .multilineTextAlignment(textAlign ?? .center)
-         .lineLimit(lineLimit)
+         self
+            .foregroundColor(color)
+            .multilineTextAlignment(textAlign ?? .center)
+            .lineLimit(lineLimit)
+            .font(fontWeight != nil ? self.customFont?.weight(fontWeight!) :  self.customFont)
    }
 }
