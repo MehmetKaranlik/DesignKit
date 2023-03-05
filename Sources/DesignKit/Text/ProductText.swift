@@ -22,6 +22,13 @@ public struct ProductText: View {
       return Text(label)
          .font(customFont)
    }
+
+
+   fileprivate mutating func updateCustomFontWeight(fontWeight : Font.Weight? = nil) {
+      guard let fontWeight else { return }
+      let newFont = self.customFont?.weight(fontWeight)
+      self = ProductText(label: self.label, customFont: newFont)
+   }
 }
 
 @available(iOS 13.0, *)
@@ -112,16 +119,19 @@ public extension ProductText {
 
    }
 
-   func copyWith(
+   mutating func copyWith(
       color : Color?=nil,
       textAlign : TextAlignment?=nil,
       lineLimit : Int? = nil,
       fontWeight : Font.Weight? = nil
    ) -> some View {
-         self
+      if let fontWeight {
+         self.updateCustomFontWeight(fontWeight: fontWeight)
+      }
+         return self
             .foregroundColor(color)
             .multilineTextAlignment(textAlign ?? .center)
             .lineLimit(lineLimit)
-            .font(fontWeight != nil ? self.customFont?.weight(fontWeight!) :  self.customFont)
+
    }
 }
