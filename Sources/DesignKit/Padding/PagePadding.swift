@@ -26,7 +26,7 @@ public protocol EdgeInsetsTypes {
 
 @available(iOS 13.0, *)
 @available(macOS 10.15, *)
-struct PagePadding {
+public struct PagePadding {
    private let size: AppSizes? = DesignKit.shared.appSizes
 
    lazy var all = All(size: self.size!)
